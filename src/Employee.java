@@ -5,12 +5,11 @@ public class Employee {
     private int department;
     private int salary;
     private int id;
-    private static int idCounter;
 
     // переменные для красивого вывода информаци :)
     public static char rub = '₽';
-    public static final String BLU = "\u001B[34m";
-    public static final String RES = "\u001B[0m";
+    public static String BLU = "\u001B[34m";
+    public static String RES = "\u001B[0m";
 
     public Employee(String surname, String name, String patronymic, int department, int salary) {
         this.surname = surname;
@@ -18,7 +17,6 @@ public class Employee {
         this.patronymic = patronymic;
         this.department = department;
         this.salary = salary;
-        ++idCounter;
     }
 
     /* это метод на случай, если какого-нибуди сотрудника нужно уволить, а на его место взять нового
@@ -28,9 +26,6 @@ public class Employee {
         this.id = idnum;
     }
 
-    public static int idCounter() {
-        return idCounter;
-    }
 
     public String getSurname() {
         return this.surname;
@@ -63,7 +58,6 @@ public class Employee {
     public int getId() {
         return this.id;
     }
-
 
     // Переопределение сравнения сотрудников по зарплате
     @Override

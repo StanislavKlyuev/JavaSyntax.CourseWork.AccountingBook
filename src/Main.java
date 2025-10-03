@@ -52,75 +52,100 @@ public class Main {
             вызовите метод 11 раз, выведите результат исполнения метода на экран.
         12. Проверьте корректность работы всех методов.*/
 
-        // создаем новую книгу (массив) учета сотрудников
-        EmployeeBook.setEmployees(10);
+        // создаем новую книгу book1 (массив) учета сотрудников
+        EmployeeBook book1 = new EmployeeBook(10, "book1");
 
-        // добавляем в книгу новых сотрудников
-        EmployeeBook.addEmployee("Макаров", "Александр", "Семенович", 1, 50);
-        EmployeeBook.addEmployee("Иванов", "Олег", "Иванович", 1, 505);
-        EmployeeBook.addEmployee("Петров", "Иван", "Петрович", 2, 180);
-        EmployeeBook.addEmployee("Сидоров", "Петр", "Олегович", 3, 300);
-        EmployeeBook.addEmployee("Костин", "Илья", "Алексеевич", 4, 350);
-        EmployeeBook.addEmployee("Гагарин", "Юрий", "Максимович", 5, 400);
-        EmployeeBook.addEmployee("Максимов", "Алексей", "Викторович", 3, 70);
-        EmployeeBook.addEmployee("Морозов", "Дмитрий", "Витальевич", 2, 230);
-        EmployeeBook.addEmployee("Воронин", "Станислав", "Юрьевич", 5, 320);
-        EmployeeBook.addEmployee("Марков", "Илья", "Николаевич", 4, 430);
+        // создаем новую книгу book2 (массив) учета сотрудников
+        EmployeeBook book2 = new EmployeeBook(3, "book2");
 
-        System.out.println();
-
-        // Выводим список всех сотрудников
-        EmployeeBook.printAllEmployees();
+        // добавляем в книгу book1 новых сотрудников
+        book1.addEmployee("Макаров", "Александр", "Семенович", 1, 50);
+        book1.addEmployee("Иванов", "Олег", "Иванович", 1, 505);
+        book1.addEmployee("Петров", "Станислав", "Петрович", 2, 180);
+        book1.addEmployee("Сидоров", "Петр", "Олегович", 3, 300);
+        book1.addEmployee("Костин", "Илья", "Алексеевич", 4, 350);
+        book1.addEmployee("Гагарин", "Юрий", "Максимович", 5, 400);
+        book1.addEmployee("Ильин", "Сергей", "Николаевич", 3, 430);
+        book1.addEmployee("Тюрин", "Александр", "Викторович", 4, 320);
+        book1.addEmployee("Никулин", "Юрий", "Иванович", 2, 230);
+        book1.addEmployee("Ульянов", "Dkflbvbh", "Bkmbx", 5, 70);
 
         System.out.println();
 
-        // Добавим еще одного сотрудника
-        EmployeeBook.addEmployee("Смирнов", "Илья", "Николаевич", 4, 430);
+        // добавляем в книгу book2 новых сотрудников
+        book2.addEmployee("Максимов", "Алексей", "Викторович", 3, 70);
+        book2.addEmployee("Морозов", "Дмитрий", "Витальевич", 2, 230);
+        book2.addEmployee("Воронин", "Станислав", "Юрьевич", 5, 320);
+
+        System.out.println();
+
+        // Выводим список всех сотрудников book1
+        book1.printAllEmployees();
+
+        System.out.println();
+        // Выводим список всех сотрудников book1
+        book2.printAllEmployees();
+
+        System.out.println();
+
+        // Добавим еще одного сотрудника в каждую книгу
+        book1.addEmployee("Смирнов", "Илья", "Николаевич", 4, 430);
+        book2.addEmployee("Марков", "Илья", "Николаевич", 4, 430);
 
         System.out.println();
 
         //выводим среднее значение зарплат
-        EmployeeBook.printAverageSalary();
+        book1.printAverageSalary();
 
         System.out.println();
 
         //Выводим значения налога
         String tax = "PROPORTIONAL"; // PROPORTIONAL или PROGRESSIVE
-        EmployeeBook.printTax(tax);
+        book1.printTax(tax);
 
         System.out.println();
 
         //Индексируем зарплату сотрудникам отдела dep на величину ind
         int dep = 1;
         int ind = 10;
-        EmployeeBook.getDept(dep, ind);  //
+        book1.getDept(dep, ind);
 
         System.out.println();
 
         // вывод первого сотрудника отдела dep с зарплатой выше порога vol
-        dep = 1;
+        dep = 5;
         int vol = 75;
-        EmployeeBook.getEmploy(dep, vol);
+        book1.getEmploy(dep, vol);
 
         System.out.println();
 
         // вывод employeeNumber сотрудников c зарплатой ниже порога wage
         int employeeNumber = 2;
         int wage = 400;
-        EmployeeBook.getLowEmployees(wage, employeeNumber);
+        book1.getLowEmployees(wage, employeeNumber);
 
         System.out.println();
 
         // получаем объект сотрудника и проверяем его по бух учету
-        Employee ilya = new Employee("Смирнов", "Илья", "Николаевич", 4, 431);
-        boolean have = EmployeeBook.findEmployee(ilya);
+        Employee ilya = new Employee("Смирнов", "Илья", "Николаевич", 4, 430);
+        boolean have = book1.findEmployee(ilya);
         System.out.println(have);
 
         System.out.println();
 
         //Получаем сотрудника по id
         int id = 3;
-        Employee empl = EmployeeBook.getEmployeeId(id);
+        Employee empl = book1.getEmployeeId(id);
         System.out.println(empl);
+
+        System.out.println();
+
+        //Удаляем сотрудника по номеру id
+        book1.deleteEmployee(5);
+
+        System.out.println();
+
+        //Выводим обновленный список сотрудников
+        book1.printAllEmployees();
     }
 }
