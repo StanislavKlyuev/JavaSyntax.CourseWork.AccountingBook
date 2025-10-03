@@ -28,7 +28,7 @@ public class Employee {
         this.id = idnum;
     }
 
-    public static int idCounte() {
+    public static int idCounter() {
         return idCounter;
     }
 

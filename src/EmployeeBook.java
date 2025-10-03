@@ -42,7 +42,7 @@ public class EmployeeBook {
                 continue;
             System.out.println(emp);
         }
-        System.out.println("Общее количесвто сотрудников: " + Employee.idCounte());
+        System.out.println("Общее количесвто сотрудников: " + Employee.idCounter());
     }
 
     // среднее значение зарплаты
@@ -51,7 +51,7 @@ public class EmployeeBook {
         int count = 0;
         for (Employee emp : employees) {
             if (emp == null)
-                continue;
+                break;
             sum += emp.getSalary();
             count++;
         }
