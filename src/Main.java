@@ -53,10 +53,10 @@ public class Main {
         12. Проверьте корректность работы всех методов.*/
 
         // создаем новую книгу book1 (массив) учета сотрудников
-        EmployeeBook book1 = new EmployeeBook(10, "book1");
+        EmployeeBook book1 = new EmployeeBook( "book1", 10);
 
         // создаем новую книгу book2 (массив) учета сотрудников
-        EmployeeBook book2 = new EmployeeBook(3, "book2");
+        EmployeeBook book2 = new EmployeeBook("book2", 3);
 
         // добавляем в книгу book1 новых сотрудников
         book1.addEmployee("Макаров", "Александр", "Семенович", 1, 50);

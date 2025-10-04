@@ -8,7 +8,7 @@ public class EmployeeBook {
     public static char rub = '₽';
 
     // Создаем новую книгу (массив) сотрудников (конструктор)
-    public EmployeeBook(int size, String name) {
+    public EmployeeBook(String name, int size) {
         this.employees = new Employee[size];
         this.name = name;
     }
