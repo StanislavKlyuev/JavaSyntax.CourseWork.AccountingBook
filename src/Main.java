@@ -133,7 +133,7 @@ public class Main {
 
         System.out.println();
 
-        //Получаем сотрудника по id
+        // Получаем сотрудника по id
         int id = 3;
         Employee empl = book1.getEmployeeId(id);
         System.out.println(empl);

@@ -154,7 +154,7 @@ public class EmployeeBook {
         return null;
     }
 
-    //Удаляем сотрудника по номеру id
+    // Удаляем сотрудника по номеру id
     public void deleteEmployee(int id) {
         System.out.println("Вы удалили соотрудника книги " + this.name + " по id # " + id);
         System.out.println(employees[id-1]);

@@ -74,7 +74,7 @@ public class Employee {
         return "id # " + id + ": ФАМИЛИЯ: " + BLU + surname + RES + "; ИМЯ: " + BLU + name + RES + "; ОТЧЕСТВО: " + BLU + patronymic + RES + "; ОТДЕЛ: " + BLU + department + RES + "; ЗАРПЛАТА: " + BLU + salary + rub + RES;
     }
 
-    // Вывод сокращенной информации
+    //Вывод сокращенной информации
     public void printShortInfo() {
         System.out.println("Сокращенные данные: " + "id # " + id + ": ФАМИЛИЯ: " + BLU + surname + RES + " ИМЯ: " + BLU + name + RES + "; ЗАРПЛАТА: " + BLU + salary + rub + RES);
     }
